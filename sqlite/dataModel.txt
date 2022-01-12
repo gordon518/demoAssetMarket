@@ -1,0 +1,45 @@
+﻿/* Data Model*/
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `username` varchar(15) unique,
+  `password` varchar(20) DEFAULT NULL,
+  `role_code` varchar(5) DEFAULT NULL,
+  `freezed` varchar(2) DEFAULT NULL,
+  `pass2` varchar(20) DEFAULT NULL,
+  `unitid` int(11) DEFAULT NULL
+);
+
+DROP TABLE IF EXISTS `merchant`;
+create table merchant(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+country varchar(10),
+name varchar(128),
+mode varchar(20),
+price1 int default 0,
+price2 int default 0,
+website varchar(128),
+pic varchar(10));
+
+/* create seed data */
+INSERT INTO user(username,password) VALUES ('aa','11');
+INSERT INTO user(username,password) VALUES ('bb','22');
+INSERT INTO user(username,password) VALUES ('cc','33');
+
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('USA','Prepaid Mastercard® (Choice)','In-store & Online',25,514,'https://help.guusto.com/en/articles/2896636-how-do-i-redeem-a-guusto-gift-for-a-prepaid-mastercard','01');
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('USA','Prepaid Mastercard® (Virtual)','Online',10,1000,'https://help.guusto.com/en/articles/2896636-how-do-i-redeem-a-guusto-gift-for-a-prepaid-mastercard','01');
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('USA','1800 Flowers','In-store & Online',15,500,'https://www.1800flowers.com/','02');
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('USA','Airbnb','In-store & Online',25,500,'https://www.airbnb.com/','03');
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('USA','Amazon','In-store & Online',15,500,'https://www.amazon.com/','04');
+
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('CAN','Air Canada','In-store & Online',25,2000,'https://www.aircanada.com/','05');
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('CAN','Amazon','In-store & Online',5,1000,'https://www.amazon.ca/','04');
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('CAN','America','In-store',25,1000,'http://americarestaurant.ca/','06');
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('CAN','Auberge du Pommier','In-store',25,1000,'http://www.aubergedupommier.com/','07');
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('CAN','Banana Republic','In-store & Online',5,500,'http://bananarepublic.gapcanada.ca/','08');
+
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('INTL','Prepaid Mastercard® (Choice)','In-store & Online',25,514,'https://help.guusto.com/redeeming-gifts/how-do-i-redeem-a-guusto-gift-for-a-prepaid-mastercard','01');
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('INTL','Prepaid Mastercard® (Virtual)','Online',10,1000,'https://help.guusto.com/en/articles/2896636-how-do-i-redeem-a-guusto-gift-for-a-prepaid-mastercard','01');
+insert into merchant(country,name,mode,price1,price2,website,pic) values ('INTL','Amazon','In-store & Online',5,1000,'https://www.amazon.ca/','04');
+insert into merchant(country,name,mode,website,pic) values ('INTL','Custom Rewards Options','In-store & Online','https://guusto.com/','09');
+
