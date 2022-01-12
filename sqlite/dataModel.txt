@@ -1,45 +1,36 @@
-﻿/* Data Model*/
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
-  `id` INTEGER PRIMARY KEY AUTOINCREMENT,
-  `username` varchar(15) unique,
-  `password` varchar(20) DEFAULT NULL,
-  `role_code` varchar(5) DEFAULT NULL,
-  `freezed` varchar(2) DEFAULT NULL,
-  `pass2` varchar(20) DEFAULT NULL,
-  `unitid` int(11) DEFAULT NULL
+﻿DROP TABLE IF EXISTS `building`;
+CREATE TABLE `building` (
+  `id` varchar(10) PRIMARY KEY,
+  `name` varchar(50) DEFAULT NULL,
+  `x` int DEFAULT 0,
+  `y` int DEFAULT 0
 );
 
-DROP TABLE IF EXISTS `merchant`;
-create table merchant(
-id INTEGER PRIMARY KEY AUTOINCREMENT,
-country varchar(10),
-name varchar(128),
-mode varchar(20),
-price1 int default 0,
-price2 int default 0,
-website varchar(128),
-pic varchar(10));
+DROP TABLE IF EXISTS `tower`;
+CREATE TABLE `tower` (
+  `id` varchar(10) PRIMARY KEY,
+  `name` varchar(50) DEFAULT NULL,
+  `x` int DEFAULT 0,
+  `y` int DEFAULT 0
+);
 
 /* create seed data */
-INSERT INTO user(username,password) VALUES ('aa','11');
-INSERT INTO user(username,password) VALUES ('bb','22');
-INSERT INTO user(username,password) VALUES ('cc','33');
+INSERT INTO building(id,name,x,y) VALUES ('B1', 'General hospital', 1300, 560);
+INSERT INTO building(id,name,x,y) VALUES ('B2', 'Firehall', -350, 1100);
+INSERT INTO building(id,name,x,y) VALUES ('B3', 'University', -890, -1300);
+INSERT INTO building(id,name,x,y) VALUES ('B4', 'Central library', 470, 1010);
+INSERT INTO building(id,name,x,y) VALUES ('B5', 'Secondary school', 1550, 850);
+INSERT INTO building(id,name,x,y) VALUES ('B6', 'Primary school', 1450, 950);
+INSERT INTO building(id,name,x,y) VALUES ('B7', 'City Hall', -600, 200);
 
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('USA','Prepaid Mastercard® (Choice)','In-store & Online',25,514,'https://help.guusto.com/en/articles/2896636-how-do-i-redeem-a-guusto-gift-for-a-prepaid-mastercard','01');
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('USA','Prepaid Mastercard® (Virtual)','Online',10,1000,'https://help.guusto.com/en/articles/2896636-how-do-i-redeem-a-guusto-gift-for-a-prepaid-mastercard','01');
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('USA','1800 Flowers','In-store & Online',15,500,'https://www.1800flowers.com/','02');
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('USA','Airbnb','In-store & Online',25,500,'https://www.airbnb.com/','03');
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('USA','Amazon','In-store & Online',15,500,'https://www.amazon.com/','04');
-
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('CAN','Air Canada','In-store & Online',25,2000,'https://www.aircanada.com/','05');
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('CAN','Amazon','In-store & Online',5,1000,'https://www.amazon.ca/','04');
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('CAN','America','In-store',25,1000,'http://americarestaurant.ca/','06');
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('CAN','Auberge du Pommier','In-store',25,1000,'http://www.aubergedupommier.com/','07');
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('CAN','Banana Republic','In-store & Online',5,500,'http://bananarepublic.gapcanada.ca/','08');
-
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('INTL','Prepaid Mastercard® (Choice)','In-store & Online',25,514,'https://help.guusto.com/redeeming-gifts/how-do-i-redeem-a-guusto-gift-for-a-prepaid-mastercard','01');
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('INTL','Prepaid Mastercard® (Virtual)','Online',10,1000,'https://help.guusto.com/en/articles/2896636-how-do-i-redeem-a-guusto-gift-for-a-prepaid-mastercard','01');
-insert into merchant(country,name,mode,price1,price2,website,pic) values ('INTL','Amazon','In-store & Online',5,1000,'https://www.amazon.ca/','04');
-insert into merchant(country,name,mode,website,pic) values ('INTL','Custom Rewards Options','In-store & Online','https://guusto.com/','09');
-
+INSERT INTO tower(id,name,x,y) VALUES ('C1', 'Bell NW', 2200, 1720);
+INSERT INTO tower(id,name,x,y) VALUES ('C2', 'Bell NE', -1090, 1400);
+INSERT INTO tower(id,name,x,y) VALUES ('C3', 'Bell SW', 760, -1360);
+INSERT INTO tower(id,name,x,y) VALUES ('C4', 'Bell SE', -1410, -450);
+INSERT INTO tower(id,name,x,y) VALUES ('C5', 'Rogers NW1', 2300, 1710);
+INSERT INTO tower(id,name,x,y) VALUES ('C6', 'Rogers NW2', 50, 2080);
+INSERT INTO tower(id,name,x,y) VALUES ('C7', 'Rogers SE', -1410, -450);
+INSERT INTO tower(id,name,x,y) VALUES ('C8', 'Freedom SW', 1100, -1200);
+INSERT INTO tower(id,name,x,y) VALUES ('C9', 'Freedom NE', -1090, 1400);
+INSERT INTO tower(id,name,x,y) VALUES ('C10', 'TELUS SE1', -1740, -50);
+INSERT INTO tower(id,name,x,y) VALUES ('C11', 'TELUS SE2', -2300, -350);
