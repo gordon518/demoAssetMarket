@@ -55,7 +55,7 @@ function findTower(buildingPoint, arTower) {
 		let mid = partation(arr, first, last, cmp);
 		if ( mid == nth )
 			return arr[mid];
-		return ( mid < nth ) ? nth_element(arr, mid+1, last, nth, cmp) : nth_element(arr, first, mid-1, nth, cmp);
+		return ( mid < nth ) ? nth_element(arr, mid+1, nth, last, cmp) : nth_element(arr, first, nth, mid-1, cmp);
 	}
 
 	function partation(arr, first, last, cmp) {
@@ -113,6 +113,11 @@ function findTower(buildingPoint, arTower) {
 		
 		//fast sort by nth_element from C/C++ STL，find mid point
 		nth_element(arTower, L, mid, R, cmp);
+		//console.log("after nth_element,L="+L+",mid="+mid+",R="+R);
+		//for(let i=L;i<=R;i++) {
+		//	let o=arTower[i];
+		//	console.log("idx="+o.idx+","+o.x+","+o.y);
+		//}
 		
 		buildKdTree(L,mid-1);
 		buildKdTree(mid+1,R);
@@ -151,6 +156,11 @@ function findTower(buildingPoint, arTower) {
 	}
 	
 	buildKdTree(0,towerSum-1);
+	//console.log("after buildKdTree,L=0,R="+(towerSum-1));
+	//for(let i=0;i<towerSum;i++) {
+	//	let tower=arTower[i];
+	//	console.log("idx="+tower.idx+","+tower.x+","+tower.y);
+	//}
 	let nearestSum=1;
 	use.splice(0,use.length); //set null array
 	buildingPos=[buildingPoint.x, buildingPoint.y];
@@ -167,4 +177,4 @@ const getDistance = (a, b) => {
 	const xDiff = (a.x - b.x) ** 2
 	const yDiff = (a.y - b.y) ** 2
 	return Math.sqrt(xDiff + yDiff)
-  }
+}
