@@ -7,7 +7,7 @@ This project use node express(back end)/react(front end) framework. The front us
 <br>
 The main page will show building list. You can search by ID, Name in the page, the name search supports fuzzy lookup. The page also support sorting by each column.
 <br>
-The functionality of finding nearest tower used KD-Tree to speed up searching. It takes me a lot of time on Algorithm reaserch, it just beta version, not fully tested.
+The functionality of finding nearest tower used KD-Tree to speed up searching. There is the file of test/testApi.js for unit test of this API.
 
 # Run Guide
 1 Install Node-v12.22.0<br>
