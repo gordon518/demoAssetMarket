@@ -18,24 +18,9 @@ app.use(session({
 app.use("/api", router);
 
 app.use("/",express.static(__dirname+"/dist"));
-//app.get("/", (req, res) => {
-//    return res.render("index", {
-//        userName: "",
-//        token: "",
-//        hasLogin: false
-//    })
-//})
 
-//mongoose.connect("mongodb://localhost/db", (err, db) => {
-//    if(err) {
-//        console.log("MongoDb coonnect error");
-//        process.exit(1);
-//    }
-//    else {
-//        console.log("MongoDb connect succeeded")
-//    }
-//})
-
-app.listen("8888", () => {
+var server = app.listen("8888", () => {
     console.log("server created at port:8888!");
-})
+});
+
+module.exports = server;
